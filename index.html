@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <BODY BACKGROUND="https://static.vecteezy.com/system/resources/previews/013/227/616/non_2x/background-graphics-with-light-purple-white-black-gradients-use-designs-for-web-pages-apps-mobile-text-backgrounds-screens-wallpapers-decorations-and-art-design-elements-photo.jpg">
+    <title>Mi Página Web</title>
+    <style>        
+        /* Estilos CSS personalizados aquí */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #0049FF ;
+            color: #FFFFFF ;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+        }
+                nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+                nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+                nav ul li a {
+            color: #FF0000 ;
+            text-decoration: none;
+            font-size: 18px;
+        }
+                nav ul li a:hover {
+            text-decoration: underline;
+        }
+	        section {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #00DCFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+                p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+                
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div id="welcome-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.9); padding: 20px; border: 1px solid #ccc;">
+        <h2>Bienvenido a mi proyecto</h2>
+        <button onclick="hideWelcomePopup()">Cerrar</button>
+    </div>
+    <header>
+	<h1><i>Ingenieria Automotriz
+	<br>
+	Proyecto Final</i></h1>
+    </header>
+<br>
+<br>
+<section>
+	<section>
+        <center><i><tt><h2>||- Informacion Del Alumno(a): -||</h2></tt></i></center><hr>
+	<i><tt><h2>Alumno(a):</h2></tt></i>
+        <u><h4>Pacheco Alvarez Angel Gabriel</h4></u>
+	<hr>
+        <i><tt><h2>Grado y Grupo:</h2></tt></i>
+        <u><h4>4°CPM</h4></u>
+	<hr>
+        <i><tt><h2>Proyecto Final:</h2></tt></i>
+	<u><h4>Ingenieria Automotriz</h4></u>
+	<hr>
+        <i><tt><h2>Escuela:</h2></tt></i>
+	<u><h4>Centro De Estudios Tecnologicos Industrial Y De Servicios N°119</h4></u>
+	<hr>
+	<i><tt><h2>Maestro(a):</h2></tt></i>
+	<u><h4>Petra Rodriguez Astudillo</h4></u>
+	<hr>
+	</section>
+</section>
+<br>
+	<br>
+<section>
+	<section>
+        <tt><i><h2>Cuestionarios</h2></tt></i>
+    </section>
+        <form id="questionnaireForm" onsubmit="return showThankYouMessage()">
+    <label for="respuesta1">Pregunta 1: ¿Cuáles son algunos de los principales desafíos que enfrenta la ingeniería automotriz en la transición hacia la electrificación de vehículos y la conducción autónoma?</label><br>
+    <input type="text" id="respuesta1" name="respuesta1"><br><br>
+    
+    <label for="respuesta2">Pregunta 2: ¿Cómo pueden los ingenieros automotrices utilizar la simulación por computadora y las pruebas en el mundo real para optimizar el diseño y el rendimiento de los vehículos y sistemas de propulsión?</label><br>
+    <input type="text" id="respuesta2" name="respuesta2"><br><br>
+    
+    <label for="respuesta3">Pregunta 3: ¿Qué avances tecnológicos están impactando significativamente en la industria automotriz y cómo están siendo implementados por los ingenieros?</label><br>
+    <input type="text" id="respuesta3" name="respuesta3"><br><br>
+    
+    <label for="respuesta4">Pregunta 4: ¿Cuál es el papel de la inteligencia artificial y el aprendizaje automático en el desarrollo de vehículos autónomos y sistemas de asistencia al conductor?</label><br>
+    <input type="text" id="respuesta4" name="respuesta4"><br><br>
+    
+    <button type="submit" style="background-color: green;">Enviar</button>
+    <button type="reset" style="background-color: red;">Cancelar</button>
+</form>
+</section>
+    <script>
+        // Función para ocultar el cartel de bienvenida
+        function hideWelcomePopup() {
+            document.getElementById('welcome-popup').style.display = 'none';
+        }
+
+        // Mostrar el cartel de bienvenida al cargar la página
+        window.onload = function() {
+            document.getElementById('welcome-popup').style.display = 'block';
+        };
+
+        // Función para mostrar un mensaje de agradecimiento al enviar el cuestionario
+        function showThankYouMessage() {
+            alert("Gracias por contestar el cuestionario");
+            return false; // Para evitar que el formulario se envíe realmente
+        }
+    </script>
+</body>
+</html>
